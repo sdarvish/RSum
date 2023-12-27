@@ -1,6 +1,9 @@
+import org.jetbrains.compose.ExperimentalComposeLibrary
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsCompose)
 }
 
 kotlin {
@@ -24,11 +27,26 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
-            //put your multiplatform dependencies here
+        androidMain.dependencies {
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
         }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
+        commonMain.dependencies {
+
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material)
+            implementation(compose.ui)
+            @OptIn(ExperimentalComposeLibrary::class)
+            implementation(compose.components.resources)
+            implementation(libs.decompose)
+            implementation(libs.decompose.experimental)
+            implementation(libs.kotlinx.serialization)
+            implementation(libs.koin.core)
+//
+            api(projects.modules.core)
+            api(projects.modules.domain)
         }
     }
 }

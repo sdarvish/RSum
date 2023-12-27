@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "ir.rsum.android"
+    namespace = "ir.rsum"
     compileSdk = 34
     defaultConfig {
-        applicationId = "ir.rsum.android"
+        applicationId = "ir.rsum"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -45,4 +45,6 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.koin.android)
 }

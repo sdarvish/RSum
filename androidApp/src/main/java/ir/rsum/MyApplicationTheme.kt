@@ -1,4 +1,4 @@
-package ir.rsum.android
+package ir.rsum
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
