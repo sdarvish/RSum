@@ -5,7 +5,8 @@ compose = "1.5.4"
 compose-compiler = "1.5.7"
 compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.2"
-decomse = "2.2.1"
+decomse = "2.2.2"
+essnety = "1.3.0"
 decomse-experimental = "2.2.0-compose-experimental"
 kotlinxSerialization = "1.6.2"
 coroutines = "1.7.3"
@@ -31,8 +32,10 @@ compose-material3 = { module = "androidx.compose.material3:material3", version.r
 
 decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decomse" }
 decompose-experimental = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decomse-experimental" }
+essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essnety" }
+essenty-statekeeper = { module = "com.arkivanov.essenty:state-keeper", version.ref = "essnety" }
 
-kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 kotlinx-datetime = { module = " org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "dateTime" }
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 
@@ -53,5 +56,5 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+kotlinSerialization= {id="org.jetbrains.kotlin.plugin.serialization", version.ref="kotlin"}
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }

@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.kotlinSerialization)
+
 }
 
 kotlin {
@@ -14,7 +16,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -23,9 +25,9 @@ kotlin {
         it.binaries.framework {
             baseName = "common"
             isStatic = true
+            export(libs.decompose)
         }
     }
-
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
@@ -42,9 +44,10 @@ kotlin {
             implementation(compose.components.resources)
             implementation(libs.decompose)
             implementation(libs.decompose.experimental)
-            implementation(libs.kotlinx.serialization)
+            implementation(libs.kotlinx.serialization.json)
             implementation(libs.koin.core)
-//
+            implementation(projects.modules.home)
+            implementation(projects.modules.intro)
             api(projects.modules.core)
             api(projects.modules.domain)
         }

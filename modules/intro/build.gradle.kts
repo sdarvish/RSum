@@ -1,8 +1,12 @@
+import org.jetbrains.compose.ExperimentalComposeLibrary
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-}
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.kotlinSerialization)
 
+}
 kotlin {
     androidTarget {
         compilations.all {
@@ -18,31 +22,31 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "core"
+            baseName = "intro"
             isStatic = true
         }
     }
 
     sourceSets {
         androidMain.dependencies {
+            implementation(libs.compose.ui.tooling.preview)
             implementation(libs.koin.android)
         }
         commonMain.dependencies {
-            //put your multiplatform dependencies here
-            implementation(libs.koin.core)
-            api(libs.settings)
-            implementation(projects.modules.data)
-            implementation(projects.modules.domain)
-            api(libs.decompose)
-        }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
+
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material)
+            implementation(compose.ui)
+            @OptIn(ExperimentalComposeLibrary::class)
+            implementation(compose.components.resources)
+            implementation(projects.modules.core)
         }
     }
 }
 
 android {
-    namespace = "ir.rsum.core"
+    namespace = "ir.rsum.intro"
     compileSdk = 34
     defaultConfig {
         minSdk = 24
