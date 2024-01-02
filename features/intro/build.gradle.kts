@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
 
 }
-
 kotlin {
     androidTarget {
         compilations.all {
@@ -23,16 +22,14 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "common"
+            baseName = "intro"
             isStatic = true
-            export(libs.decompose)
-            export(projects.core.navigation)
         }
     }
+
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
-            implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
         }
         commonMain.dependencies {
@@ -43,21 +40,13 @@ kotlin {
             implementation(compose.ui)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
-            implementation(libs.kotlinx.serialization.json)
-            implementation(libs.koin.core)
-            api(libs.decompose)
-            api(libs.decompose.experimental)
-
-            api(projects.core.settings)
-            api(projects.core.navigation)
-            api(projects.features.home)
-            api(projects.features.intro)
+            implementation(projects.core.settings)
         }
     }
 }
 
 android {
-    namespace = "ir.rsum"
+    namespace = "ir.rsum.intro"
     compileSdk = 34
     defaultConfig {
         minSdk = 24

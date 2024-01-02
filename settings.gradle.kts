@@ -17,8 +17,7 @@ dependencyResolutionManagement {
 rootProject.name = "RSum"
 include(":androidApp")
 include(":common")
-include(":modules:core")
-include(":modules:domain")
-include(":modules:data")
-include(":modules:home")
-include(":modules:intro")
+include(":core:settings")
+include(":core:navigation")
+include(":features:home")
+include(":features:intro")

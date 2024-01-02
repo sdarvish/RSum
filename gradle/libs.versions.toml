@@ -29,7 +29,6 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
 
-
 decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decomse" }
 decompose-experimental = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decomse-experimental" }
 essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essnety" }
@@ -51,10 +50,12 @@ koin-android-compose = { module = "io.insert-koin:koin-androidx-compose", versio
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koinTest" }
 
+android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlinSerialization= {id="org.jetbrains.kotlin.plugin.serialization", version.ref="kotlin"}
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }

@@ -8,16 +8,14 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
-import ir.rsum.core.navigation.RootComponent
 import ir.rsum.home.HomeContent
 import ir.rsum.intro.IntroContent
 import ir.rsum.navigation.AppRootComponent
 import ir.rsum.navigation.AppRootComponent.Child.Home
+import ir.rsum.core.navigation.RootComponent
 
 @Composable
-fun App(
-    rootComponent: RootComponent
-) {
+fun App(rootComponent: RootComponent) {
     MaterialTheme {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Children(
